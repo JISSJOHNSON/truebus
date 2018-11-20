@@ -1,0 +1,80 @@
+CREATE TABLE  `truebus`.`booking` (
+  `Id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `Uname` varchar(45) NOT NULL,
+  `Bname` varchar(45) NOT NULL,
+  `BRoute` varchar(45) NOT NULL,
+  `Btype` varchar(45) NOT NULL,
+  `Time` date NOT NULL,
+  `Price` int(10) unsigned NOT NULL,
+  `Status` int(10) unsigned NOT NULL DEFAULT '1',
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE  `truebus`.`bus` (
+  `Id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `Name` varchar(45) NOT NULL,
+  `Seats` int(10) unsigned NOT NULL,
+  `Price` int(10) unsigned NOT NULL,
+  `Route` varchar(45) NOT NULL,
+  `Type` varchar(45) NOT NULL,
+  `RegNo` varchar(45) NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE  `truebus`.`busroute` (
+  `BRid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `Route_Name` varchar(45) NOT NULL,
+  `FromCity` varchar(45) NOT NULL,
+  `ToCity` varchar(45) NOT NULL,
+  PRIMARY KEY (`BRid`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE  `truebus`.`bustype` (
+  `BTId` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `Type` varchar(45) NOT NULL,
+  PRIMARY KEY (`BTId`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE  `truebus`.`city` (
+  `Id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `Name` varchar(45) NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE  `truebus`.`seats` (
+  `Id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `BusName` varchar(45) NOT NULL,
+  `BusRegNo` varchar(45) NOT NULL,
+  `BusRoute` varchar(45) NOT NULL,
+  `Seats` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE  `truebus`.`users` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `Name` varchar(45) NOT NULL,
+  `Email` varchar(45) NOT NULL,
+  `Phone` bigint(20) unsigned NOT NULL,
+  `Dob` date NOT NULL,
+  `Gender` varchar(45) NOT NULL,
+  `Password` varchar(45) NOT NULL,
+  `UserType` int(10) unsigned DEFAULT '2',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE  `truebus`.`usertype` (
+  `Id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `Name` varchar(45) NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+
+
+
